@@ -29,6 +29,14 @@ ALLOWED_HOSTS = []
 
 
 # Application definition
+# REST_FRAMEWORK = {
+#     'DEFAULT_PERMISSION_CLASSES': (
+#         'rest_framework.permissions.IsAuthenticated',
+#     ),
+#     'DEFAULT_AUTHENTICATION_CLASSES': (
+#         'rest_framework.authentication.TokenAuthentication',
+#     )
+# }
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -40,8 +48,11 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'rest_framework',
     'corsheaders',
-    'customers',
-    'Shop'
+    'rest_framework.authtoken',
+    'Customers',
+    'Shop',
+    'order',
+    'cart',
 ]
 
 MIDDLEWARE = [
@@ -88,10 +99,7 @@ DATABASES = {
     }
 }
 
-REST_FRAMEWORK = {
-    'DEFAULT_FILTER_BACKENDS': ('django_filters.rest_framework.DjangoFilterBackend',),
-    'DEFAULT_PERMISSION_CLASSES': ( 'rest_framework.permissions.IsAdminUser', ),
-}
+
 # Password validation
 # https://docs.djangoproject.com/en/2.2/ref/settings/#auth-password-validators
 
@@ -124,14 +132,14 @@ USE_L10N = True
 
 USE_TZ = True
 
-
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
 STATIC_URL = '/static/'
-
 CORS_ORIGIN_ALLOW_ALL = True
-
 
 MEDIA_ROOT =  os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
+AUTH_USER_MODEL = 'Customers.Userprofile'
+LOGIN_REDIRECT_URL = '/shop'
+LOGIN_URL='Loginviewset'

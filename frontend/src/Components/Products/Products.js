@@ -10,7 +10,7 @@ export default class Products extends Component {
 
 componentWillMount(){
 
-     axios.get('http://127.0.0.1:8000/media/Images/')
+     axios.get('http://127.0.0.1:8000/shop/')
      .then(response=>response.data)
      .then((data)=> {
       this.setState({data:data })

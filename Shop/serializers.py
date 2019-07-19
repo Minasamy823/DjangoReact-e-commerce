@@ -5,8 +5,10 @@ from rest_framework import serializers
 class Product_serializers (serializers.ModelSerializer):
 
 
+
+
     class Meta:
-        lookup_field="name"
+
         model = models.Product
         fields = ("supplier","id","name","image","price","amount","description",
         "condition","classification","created_at", "size", "available")
