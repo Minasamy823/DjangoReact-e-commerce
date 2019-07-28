@@ -8,14 +8,16 @@ from rest_framework.authtoken.views import ObtainAuthToken
 from rest_framework.permissions import IsAuthenticatedOrReadOnly
 from rest_framework.permissions import IsAdminUser
 from . import permissions1
-
+from rest_framework.views import APIView
 # this view for creating new users and the user has the right to review only his account
 #register
 class userprofileViewset(viewsets.ModelViewSet):
      serializer_class = User_serializers
      queryset = Userprofile.objects.all()
      authentication_classes = (TokenAuthentication,)
-     
+
+
+
 
      def post_save(self, obj, created=False):
          if created:
@@ -34,5 +36,8 @@ class Loginviewset (viewsets.ViewSet):
         return ObtainAuthToken().post(request)
 
 
+#logout with get method which is list in viewsets, it destroys the token
+class Logoutviewset (viewsets.ViewSet):
 
-# class Login_viewsets(viewsets.ModelViewSet):
+    def list(self, request):
+        return request.user.auth_token.delete()

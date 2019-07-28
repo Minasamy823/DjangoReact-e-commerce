@@ -1,5 +1,7 @@
 from django.db import models
 from django.urls import reverse
+
+
 #Models of the Products
 class Supplier (models.Model):
      name = models.CharField(max_length=250, default='')

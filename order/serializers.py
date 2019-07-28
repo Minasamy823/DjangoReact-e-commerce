@@ -6,4 +6,4 @@ class Orderserializers (serializers.ModelSerializer):
 
     class Meta:
         model = models.Order
-        fields = ['user', 'product'] 
+        fields = ['product'] 
