@@ -2,6 +2,8 @@ from django.db import models
 from django.contrib.auth.models import AbstractBaseUser
 from django.contrib.auth.models import PermissionsMixin
 from django.contrib.auth.models import BaseUserManager
+# from cart.models import Cart
+# from django.db.models import signals
 
 class userprofileManager(BaseUserManager):
 
@@ -28,6 +30,8 @@ class userprofileManager(BaseUserManager):
         user.save(using=self._db)
 
         return user
+
+
 
 class Userprofile (AbstractBaseUser, PermissionsMixin):
 
@@ -60,3 +64,8 @@ class Userprofile (AbstractBaseUser, PermissionsMixin):
 
         def __str__(self):
             return self.email
+
+        # def perform_create(self, serializer):
+        #    cart = Cart(user = self.request.user)
+        #    serializer.save(cart=cart)
+# signals.post_save.connect(receiver=Cart, sender=Userprofile)

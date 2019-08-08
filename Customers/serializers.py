@@ -1,6 +1,6 @@
 
 from . import models
-
+from cart.models import Cart
 from rest_framework import serializers #for the passwords savings
 
 
@@ -21,5 +21,7 @@ class User_serializers(serializers.ModelSerializer):
         email = validated_data['email']
         )
         user.set_password(validated_data['password'])
+        if user:
+            print("User already exists")
         user.save()
         return user

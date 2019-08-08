@@ -1,11 +1,13 @@
 import React, {Component} from 'react';
-import Customerservices from "../Customerservices";
+import Customerservices from "./Customerservices";
 import axios from 'axios';
-import Createuser from './Createuser.css'
+import { Button, Form, Grid, Header, Image, Message, Segment } from 'semantic-ui-react'
+
+
 
 const customerservices = new Customerservices();
 
-export default class createuser extends Component{
+export default class Createuser extends Component{
 
   state={
     name:"",
@@ -60,17 +62,20 @@ export default class createuser extends Component{
     }
 
 
+
   sendingdata =()=>{
     customerservices.createcustomer({
       'name':this.refs.name.value,
       'email':this.refs.email.value,
       'password':this.refs.password.value
+    }).then(res => {
+        const token = res.data.token // you should firstly fetch the token from the data to be known
+        localStorage.setItem('id_token', token) // Store token
     }).then((result)=> {
       console.log(result);
       alert("Created");
     }).catch((error)=>{
       console.log(error);
-      alert("not good");
     })
 
 }
@@ -138,6 +143,7 @@ export default class createuser extends Component{
             <div style={{color: "red"}}> {this.state.passwmatcherror}</div>
 
              <button> Register </button>
+
 
 
 

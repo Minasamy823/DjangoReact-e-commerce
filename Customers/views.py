@@ -1,32 +1,36 @@
 from .serializers import *
 from .models import Userprofile
 from rest_framework import viewsets
+from rest_framework.generics import ListCreateAPIView
 from cart.models import Cart
 from rest_framework.authentication import TokenAuthentication
 from rest_framework.authtoken.serializers import AuthTokenSerializer
 from rest_framework.authtoken.views import ObtainAuthToken
-from rest_framework.permissions import IsAuthenticatedOrReadOnly
-from rest_framework.permissions import IsAdminUser
-from . import permissions1
 from rest_framework.views import APIView
+from rest_framework.authtoken.models import Token
+from rest_framework.response import Response
+from rest_framework import status
+
 # this view for creating new users and the user has the right to review only his account
 #register
-class userprofileViewset(viewsets.ModelViewSet):
+class userprofileViewset(ListCreateAPIView):
      serializer_class = User_serializers
      queryset = Userprofile.objects.all()
-     authentication_classes = (TokenAuthentication,)
+
+
+
+     def create(self, request, *args, **kwargs):
+        serializer = self.get_serializer(data=request.data)
+        serializer.is_valid(raise_exception=True)
+        self.perform_create(serializer)
+        headers = self.get_success_headers(serializer.data)
+        token, created = Token.objects.get_or_create(user=serializer.instance)
+        return Response({'token': token.key}, status=status.HTTP_201_CREATED, headers=headers)
 
 
 
 
-     def post_save(self, obj, created=False):
-         if created:
-             cart = Cart(user=obj)
-             cart.save()
 
-
-
-     # def update(self, request, pk=None, project_pk=None):
 class Loginviewset (viewsets.ViewSet):
     """checks email and pass and return the response"""
     serializer_class = AuthTokenSerializer

@@ -6,7 +6,7 @@ from django.urls import path, include
 from rest_framework.response import Response
 
 router = DefaultRouter()
-router.register(r'userprofileViewset', views.userprofileViewset, basename='userprofileViewset')
+# router.register(r'userprofileViewset', views.userprofileViewset, basename='userprofileViewset')
 router.register(r'Loginviewset', views.Loginviewset, base_name='login')
 router.register(r'Logoutviewset', views.Logoutviewset, base_name='logout')
 
@@ -15,6 +15,7 @@ router.register(r'Logoutviewset', views.Logoutviewset, base_name='logout')
 urlpatterns = [
 
     url(r'', include(router.urls)),
+    url(r'userprofileViewset', views.userprofileViewset.as_view(), name='userprofileViewset')
 
 
 ]

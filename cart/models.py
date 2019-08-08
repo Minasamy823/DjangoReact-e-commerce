@@ -2,7 +2,7 @@ from django.db import models
 from Shop.models import Product
 from Customers.models import Userprofile
 from order.models import Order
-
+from django.db.models.signals import post_save
 # Create your models here.
 
 
@@ -11,6 +11,15 @@ class Cart (models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
 
 
+    def __str__(self):
+        return '{}' .format(self.user)
+
+# thisone for creating the cart for any user hat register automatically
+    def create_shopCart(sender,**kwargs):
+        if kwargs["created"]:
+            Cart.objects.create(user=kwargs["instance"])
+
+    post_save.connect(create_shopCart,sender=Userprofile)
 
 
 
