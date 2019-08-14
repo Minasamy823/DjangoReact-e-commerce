@@ -2,7 +2,11 @@ import React, {Component} from 'react';
 import Customerservices from "./Customerservices";
 import axios from 'axios';
 import Createuser from './Createuser.css'
-import { Button, Form, Grid, Header, Image, Message, Segment } from 'semantic-ui-react'
+import { Button, Form, Grid, Image, Message, Segment } from 'semantic-ui-react'
+import { Dimmer, Loader } from 'semantic-ui-react';
+import Header from '../Header/Header';
+import './Login.css';
+import Footer from '../Footer/Footer';
 
 
 const customerservices = new Customerservices();
@@ -54,8 +58,8 @@ export default class Login extends Component{
 
   sendingdata =()=>{
     customerservices.login({
-      'username':this.refs.email.value,
-      'password':this.refs.password.value
+      'username' : this.state.Email,
+      'password' : this.state.passw
     }).then(res => {
         const token = res.data.token // you should firstly fetch the token from the data to be known
         localStorage.setItem('id_token', token) // Store token
@@ -73,13 +77,17 @@ export default class Login extends Component{
     if (validate) {
 
       this.setState({emailerror:""})
-      this.setState({passwerror:""})
-      this.sendingdata();
-    }
+      this.setState({passwerror:""})}
+    if (this.state.Email.length>1 && this.state.passw.length>1){
+        this.sendingdata()}
 
 
-  }
 
+
+
+
+
+}
 
 
 
@@ -87,72 +95,50 @@ export default class Login extends Component{
   render(){
     return(
 
-       // <form onSubmit={this.submithandle}>
-       // <div className='Createuser'>
-       //   <h style={{MarginRight:40 }}> login </h>
-       //   <br/>
-       //   <br/>
-       //      <p> Email </p>
-       //
-       //         <input
-       //             ref='email'
-       //             type="text"
-       //             placeholder="Email"
-       //             value={this.state.Email}
-       //             onChange={this.emailhandler}/>
-       //      <div style={{color: "red"}}> {this.state.emailerror}</div>
-       //      <br/>
-       //       <p> Password </p>
-       //          <input
-       //              ref='password'
-       //              type="Password"
-       //              placeholder="Password"
-       //              value={this.state.Passw}
-       //              onChange={this.passwhandler}/>
-       //      <div style={{color: "red"}}> {this.state.passwerror}</div>
-       //
-       //       <button> Login </button>
-       //    </div>
-            <Grid textAlign='center' style={{ height: '100vh' }} verticalAlign='middle'  >
-              <Grid.Column style={{ maxWidth: 450 }}>
-                <Header as='h2' color='black' textAlign='center'>
-                   Login
-                </Header>
-                <Form size='large' onSubmit={this.submithandle}>
-                  <Segment stacked>
-                    <Form.Input
-                        ref='email'
-                        icon='user'
-                        iconPosition='left'
-                        placeholder='E-mail address'
-                        type='email'
-                        value={this.state.Email}
-                        onChange={this.emailhandler}
+       <form onSubmit={this.submithandle}>
+          <Header />
+
+            <div className='Container'>
+            <h className='h_login'> Login </h>
+            <h className='h_slash'> / </h>
+            <h className='h_register'>
+                  <a className='a'href='register'>Register</a>
+            </h>
+            <br/>
+            <br/>
+
+               <p> Email </p>
+
+                  <input
+                      className="Input"
+                      type="text"
+                      value={this.state.Email}
+                      onChange={this.emailhandler}/>
+               <div style={{color: "red"}}> {this.state.emailerror}</div>
+               <br/>
 
 
-                        />
-                    <Form.Input
-                      ref='password'
-                      icon='lock'
-                      iconPosition='left'
-                      placeholder='Password'
-                      type='password'
-                      value={this.state.Passw}
-                      onChange={this.passwhandler}
+                <p> Password </p>
+                   <input
+                       className="Input"
+                       type="Password"
+                       value={this.state.Passw}
+                       onChange={this.passwhandler}/>
+               <div style={{color: "red"}}> {this.state.passwerror}</div>
 
-                    />
+               <div className='button'>
 
-                    <Button color='teal' fluid size='large'>
-                      Login
-                    </Button>
-                  </Segment>
-                </Form>
-                <Message>
-                  New to us? <a href='#'>Sign Up</a>
-                </Message>
-              </Grid.Column>
-            </Grid>
-      // </form>
+                     <button class="ui inverted orange button">
+                           Register
+                     </button>
+
+               </div>
+
+             </div>
+             <div className='Footer2'>
+              <Footer/>
+              </div>
+            </form>
     )
   }
 }

@@ -1,11 +1,77 @@
-.Createuser {
+.container {
+  position: absolute;
+  top: 23%;
+  left: 37%;
+}
 
-   border-style: double;
-   padding: 5px;
-   width: 16%;
-   height: 90%;
-   background-color: powderblue;
-   border-color: red;
-   margin: auto;
+.Footer_register{
+  position: absolute;
+  top:80%;
+  right:67vw;
+
+
+
+}
+
+
+
+.h {
+  margin-left: 5vw;
+  font-size: 40px;
+  font-weight: bold;
+  font-family: Times;
+  line-height: 42px;
+  color: black;
+}
+@media screen and (max-width: 905px){
+  .h{
+    margin-left: 9%;
+    font-size: 30px;
+
+  }
+
+}
+
+
+.Input {
+    border-color: #f0f3f7;
+    display: inline-block;
+    width: 35%;
+    height: 40px;
+    border-top-color: white;
+    font-size: 16px;
+    font-weight:70px;
+    color: black;
+    font-variant:normal;
+    border-width: 1px;
+
+
+}
+.Input:hover{
+  background-color: #E8E8E8;
+  border-color: grey;
+
+}
+@media screen and (max-width: 970px){
+  .Input{
+    width: 50%;
+
+
+  }}
+
+
+.button {
+  position: absolute;
+  right: 78%;
+
+
+
+}
+
+@media screen and (max-width: 970px){
+  .button{
+    margin-left: 12%;
+
+  }
 
 }

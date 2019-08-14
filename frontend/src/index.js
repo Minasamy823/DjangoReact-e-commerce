@@ -1,7 +1,5 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'semantic-ui-css/semantic.min.css';
-import $ from 'jquery';
-import Popper from 'popper.js';
 import 'bootstrap/dist/js/bootstrap.bundle.min';
 import React from 'react';
 import ReactDOM from 'react-dom';
@@ -10,12 +8,13 @@ import App from './App';
 import * as serviceWorker from './serviceWorker';
 import Createuser from "./Components/Createuser/Createuser";
 import Login from "./Components/Createuser/Login";
-import Logout from "./Components/Createuser/Logout";
-import Products from './Components/Products/Products'
+import { BrowserRouter } from 'react-router-dom';
 
 
 const app = (
-  <Login/>
+  <BrowserRouter>
+  <App/>
+  </BrowserRouter>
 );
 ReactDOM.render(app , document.getElementById('root'));
 

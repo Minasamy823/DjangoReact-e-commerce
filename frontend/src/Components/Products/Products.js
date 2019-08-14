@@ -1,8 +1,19 @@
 import React, {Component} from 'react';
 import axios from 'axios';
-import { Container, Card, Icon, Image, Item, Button } from 'semantic-ui-react'
+import { Card, Grid} from 'semantic-ui-react'
+import './Products.css';
+import Header from "../Header/Header";
+import Footer from "../Footer/Footer";
+import {Link} from 'react-router-dom';
+
+
+
+
+
 
 export default class products extends Component{
+
+
 
   state = {
     data: [],
@@ -12,33 +23,50 @@ export default class products extends Component{
   }
 
 
-  // componentWillMount(){
-  //
-  //      axios.get('http://127.0.0.1:8000/shop/')
-  //       .then((res)=> {
-  //        this.setState({data:res.data.results});
-  //        console.log(this.state.data);
-  //
-  //      })}
+  componentWillMount(){
+
+       axios.get('http://127.0.0.1:8000/shop/')
+        .then((res)=> {
+         this.setState({data:res.data.results});
+         console.log(this.state.data);
+
+
+         })
+
+        }
 
 
 
-   search = () => {
-      const {search} = this.state;
-      axios.get('http://127.0.0.1:8000/shop/?search={search}')
-     .then((res)=> {
-      this.setState({search_data : res.data.results});
-      console.log(this.state.search_data);
-    })}
+  // product_detail =()=>{
+  //   this.pros.history.push('/product')
+  // }
 
 
-    searchchangehandler = (event) => {
-      this.setState({search: this.refs.search.value},
-        () => {
-          if (this.state.search && this.state.search.lenght > 0)
-              this.search()
-}
-        )}
+
+   // search = () => {
+   //    const url = 'http://127.0.0.1:8000/shop/?search=';
+   //    const search = this.state.search;
+   //
+   //    axios.get(url + search)
+   //   .then((res)=> {
+   //    this.setState({search_data: res.data.results});
+   //    console.log(this.state.search_data);
+   //  })}
+   //
+   //
+   //  searchchangehandler = (event) => {
+   //    this.setState({search: event.target.value},
+   //      () => {
+   //        if (this.state.search && this.state.search.length > 1) {
+   //
+   //                this.search()
+   //
+   //
+   //
+   //        }
+   //
+   //          }
+   //      )}
 
 
 
@@ -56,50 +84,57 @@ export default class products extends Component{
 
 
   render() {
-    const {data} = this.state;
+
+    const product_card =  this.state.data.map((pro)=>
+
+
+                            <Grid.Column>
+                              <Link to={ pro.name}>
+
+                                <Card
+
+                                key={pro.id}
+                                image={pro.image}
+                                header={pro.name}
+                                description={pro.price}
+                                />
+                                </Link>
+
+                            </Grid.Column>
+                          )
+
+    const products_list = <Grid columns={3}>
+                              {product_card}
+                          </Grid>
+
+
+
 
     return(
-
-      // <Container>
-
-            <input
-                refs= "search"
-                placeholder="search"
-                value={this.state.search}
-                onChange={this.searchchangehandler}
-            />
-
-      //   <Item.Group divided>
-      //
-      // {data.map(pro =>{
-      //   return(
-      //
-      //
-      //     <Item key={pro.id}>
-      //           <Item.Image src={pro.image} />
-      //           <Item.Content>
-      //             <Item.Header as="a">{pro.title}</Item.Header>
-      //             <Item.Meta>
-      //               <span className="cinema">{pro.supplier}</span>
-      //             </Item.Meta>
-      //             <Item.Description>{pro.description}</Item.Description>
-      //             <Item.Extra>
-      //               <Button
-      //                 primary
-      //                 floated="right"
-      //                 icon
-      //                 labelPosition="right">
-      //                 Add to cart
-      //                 <Icon name="cart plus" />
-      //               </Button>
-      //             </Item.Extra>
-      //           </Item.Content>
-      //         </Item>
-      //   )
-      // })}
-      //     </Item.Group>
-      // </Container>
+      <div>
+      <Header/>
 
 
-)}
+
+      <div className='grid_container'>
+          <Grid container stackable verticalAlign='middle'>
+              <Grid.Row>
+                  <Grid.Column textAlign='center'>
+                      {products_list}
+                  </Grid.Column>
+              </Grid.Row>
+          </Grid>
+       </div>
+
+    </div>
+
+
+
+
+
+
+
+
+
+    )}
 }

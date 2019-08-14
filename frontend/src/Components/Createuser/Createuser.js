@@ -1,8 +1,9 @@
 import React, {Component} from 'react';
 import Customerservices from "./Customerservices";
 import axios from 'axios';
-import { Button, Form, Grid, Header, Image, Message, Segment } from 'semantic-ui-react'
-
+import { Button, Form, Grid, Header, Image, Message, Segment } from 'semantic-ui-react';
+import Heas from '../Header/Header';
+import Footer from '../Footer/Footer';
 
 
 const customerservices = new Customerservices();
@@ -65,9 +66,9 @@ export default class Createuser extends Component{
 
   sendingdata =()=>{
     customerservices.createcustomer({
-      'name':this.refs.name.value,
-      'email':this.refs.email.value,
-      'password':this.refs.password.value
+      'name':this.state.name,
+      'email':this.state.Email,
+      'password':this.state.passw
     }).then(res => {
         const token = res.data.token // you should firstly fetch the token from the data to be known
         localStorage.setItem('id_token', token) // Store token
@@ -86,11 +87,9 @@ export default class Createuser extends Component{
       this.setState({nameerror:""})
       this.setState({emailerror:""})
       this.setState({passwerror:""})
-      this.setState({passwmatcherror:""})
-      this.sendingdata();
-    }
-
-
+      this.setState({passwmatcherror:""})}
+    if (this.state.name.length>1 && this.state.Email.length>1 && this.state.passw.length>1 && this.state.passwmatch.length>7){
+      this.sendingdata()}
   }
 
 
@@ -101,15 +100,18 @@ export default class Createuser extends Component{
     return(
 
        <form onSubmit={this.submithandle}>
-       <div className='Createuser'>
-         <h style={{MarginRight:40 }}> Register </h>
+
+       <Heas/>
+       <div className='container'>
+
+
+         <h className='h'> Register </h>
          <br/>
          <br/>
             <p>Username</p>
                <input
-                   ref='name'
+                   className="Input"
                    type="text"
-                   placeholder="User"
                    value={this.state.name}
                    onChange={this.userchange}/>
             <div style={{color: "red"}}> {this.state.nameerror}</div>
@@ -117,18 +119,16 @@ export default class Createuser extends Component{
             <p> Email </p>
 
                <input
-                   ref='email'
+                   className="Input"
                    type="text"
-                   placeholder="Email"
                    value={this.state.Email}
                    onChange={this.emailhandler}/>
             <div style={{color: "red"}}> {this.state.emailerror}</div>
             <br/>
              <p> Password </p>
                 <input
-                    ref='password'
+                    className="Input"
                     type="Password"
-                    placeholder="Password"
                     value={this.state.Passw}
                     onChange={this.passwhandler}/>
             <div style={{color: "red"}}> {this.state.passwerror}</div>
@@ -136,24 +136,29 @@ export default class Createuser extends Component{
             <br/>
             <p> confirm Password </p>
                <input
+                   className="Input"
                    type="Password"
-                   placeholder="confirm Password"
                    value={this.state.passwmatch}
                    onChange={this.passmatchwhandler}/>
             <div style={{color: "red"}}> {this.state.passwmatcherror}</div>
 
-             <button> Register </button>
 
+            <div className='button'>
 
+            <button class="ui inverted orange button">
+                  Register
+            </button>
 
-
-
-
-
+            </div>
 
 
         </div>
+        <div className='Footer_register'>
+        <Footer/>
+        </div>
+
       </form>
+
     )
   }
 }

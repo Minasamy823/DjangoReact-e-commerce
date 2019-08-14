@@ -14,10 +14,10 @@ class products_list(viewsets.ModelViewSet, ListModelMixin):
 	queryset = Product.objects.all()
 	serializer_class = Product_serializers
 	filter_backends = [DjangoFilterBackend, filters.SearchFilter]
-	filterset_fields = ['price', 'size', 'supplier', 'condition', 'available']
+	filterset_fields = ['price', 'classification', 'size', 'supplier', 'condition', 'available']
 	search_fields = ['name']
 	pagination_class = PageNumberPagination
-	page_size = 2
+	page_size = 24
 	pagination_class.page_size = page_size
 
 

@@ -25,7 +25,7 @@ class Product(models.Model):
     url_width=models.PositiveIntegerField(default=50)
     image = models.ImageField(upload_to='Images', width_field='url_width', height_field='url_height')
     price = models.DecimalField(max_digits=10, decimal_places=2)
-    description = models.CharField(max_length=300)
+    description = models.CharField(max_length=1000)
     size = models.PositiveIntegerField()
     amount= models.PositiveIntegerField()
     material = models.CharField(max_length=250)
