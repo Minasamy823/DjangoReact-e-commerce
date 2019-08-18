@@ -1,0 +1,118 @@
+.Container {
+  position: absolute;
+  top: 38%;
+  left: 39%;
+
+
+}
+.Footer2{
+  position: absolute;
+  top:70%;
+  right:65vw;
+}
+
+
+
+.h_login {
+  margin-left: 3%;
+  font-size: 2vw;
+  font-weight: bold;
+  font-family: Times;
+  line-height: 2vw;
+  color: grey;
+  cursor: pointer;
+}
+
+.h_login:hover{
+  color:black;
+}
+
+.h_slash {
+  margin-left: 2%;
+  font-size: 2vw;
+  font-weight: bold;
+  font-family: Times;
+  line-height: 2vw;
+  color: grey;
+  cursor: pointer;
+}
+
+.h_register {
+  margin-left: %;
+  font-size: 2vw;
+  font-weight: bold;
+  font-family: Times;
+  line-height: 2vw;
+  color: black;
+}
+
+.a{
+  color:grey;
+}
+
+.a:hover{
+  color: black
+}
+
+
+
+
+.Input {
+    border-color: #f0f3f7;
+    display: inline-block;
+    width: 20vw;
+    height: 2.5vw;
+    border-top-color: white;
+    font-size: 16px;
+    font-weight:70px;
+    color: black;
+    font-variant:normal;
+    border-width: 1px;
+
+
+}
+
+.Input:hover{
+  background-color: #E8E8E8;
+  border-color: grey;
+
+}
+/* @media screen and (max-width: 970px){
+  .Input{
+    width: 50%;
+
+
+  }} */
+
+
+.button {
+  position: absolute;
+  left: 4vw;
+  margin-top: 4%;
+}
+
+@media only screen (max-width=970px) {
+  .button{
+    position: absolute;
+    left: 5vw;
+    margin-top: 4%;
+
+
+  }
+
+}
+
+
+
+/* .text_log_out{
+  position:relative;
+  color: orange;
+  bottom:30px;
+  left:0px;
+  visibility:hidden;
+
+}
+.text_log_out:hover{
+  color: orange;
+  visibility:visible;
+} */

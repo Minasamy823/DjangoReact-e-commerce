@@ -1,0 +1,76 @@
+import React, {Component} from 'react';
+import axios from 'axios';
+import { Card, Grid} from 'semantic-ui-react'
+import Header from "../Header/Header";
+import Footer from "../Footer/Footer";
+import {Link} from 'react-router-dom';
+import { Loader } from 'semantic-ui-react'
+
+
+
+
+
+
+export default class Women extends Component{
+
+
+
+  state = {
+
+    data:[],
+
+}
+
+  componentWillMount(){
+
+       axios.get('http://127.0.0.1:8000/shop/?classification=Women')
+        .then((res)=> {
+         this.setState({data:res.data.results});
+         console.log(this.state.data);
+
+         })}
+
+
+  render() {
+
+    const product_card =  this.state.data.map((pro)=>
+                            <Grid.Column>
+                              <Link to={ pro.name}>
+                                <Card
+                                key={pro.id}
+                                image={pro.image}
+                                header={pro.name}
+                                description={pro.price}
+                                />
+                                </Link>
+                            </Grid.Column>
+                          )
+
+    const products_list = <Grid columns={3}>
+                              {product_card}
+                          </Grid>
+
+    const spinner_condition =  this.state.data.length>2 ?
+
+                          <div className='grid_container'>
+                              <Grid container stackable verticalAlign='middle'>
+                                  <Grid.Row>
+                                      <Grid.Column textAlign='center'>
+                                          {products_list}
+                                      </Grid.Column>
+                                  </Grid.Row>
+                              </Grid>
+                           </div> : <Loader active inline='centered' />
+
+
+    return(
+      <div>
+        <Header/>
+        {spinner_condition}
+
+
+
+
+    </div>
+  )}
+}
