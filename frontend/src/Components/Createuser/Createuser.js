@@ -4,7 +4,6 @@ import axios from 'axios';
 import { Button, Form, Grid, Header, Image, Message, Segment } from 'semantic-ui-react';
 import Heas from '../Header/Header';
 import Footer from '../Footer/Footer';
-import './Createuser.css'
 
 
 const customerservices = new Customerservices();
@@ -79,8 +78,6 @@ export default class Createuser extends Component{
     }).catch((error)=>{
       console.log(error);
     })
-    window.location.reload()
-
 
 }
   submithandle=(e)=>{

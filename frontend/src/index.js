@@ -6,6 +6,8 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
+import Createuser from "./Components/Createuser/Createuser";
+import Login from "./Components/Createuser/Login";
 import { BrowserRouter } from 'react-router-dom';
 
 

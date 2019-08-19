@@ -5,7 +5,10 @@ import './Products.css';
 import Header from "../Header/Header";
 import Footer from "../Footer/Footer";
 import {Link} from 'react-router-dom';
-import men from "../Images/men.jpg";
+
+
+
+
 
 
 export default class products extends Component{
@@ -15,64 +18,101 @@ export default class products extends Component{
   state = {
     data: [],
     search: '',
-    search_data:[],
-    supplier:"",
-    classification:"",
-    available:"",
-    price:"",
-    supplier: "",
-    condition:"",
-    size:"",
-    filter_data:[]
+    search_data:[]
+
   }
 
-  componentWillMount (){
-    let color = this.state.color;
-    let supplier = this.state.supplier;
-    let size = this.state.size;
-    let condition = this.state.condition;
-    let classification = this.state.classification;
-    let price = this.state.price;
-    let available = this.state.available;
 
-    axios.get('http://127.0.0.1:8000/shop/?price=' + price + '&classification=' +
-    classification + '&size=' + size + '&supplier=' + supplier + '&condition=' + condition +
-    '&available='+ available)
-     .then((res)=> {
-      console.log(res.data);
-      this.setState({filter_data:res.data.results});
-    })
-    }
+  componentWillMount(){
+
+       axios.get('http://127.0.0.1:8000/shop/')
+        .then((res)=> {
+         this.setState({data:res.data.results});
+         console.log(this.state.data);
+
+
+         })
+
+        }
+
+
+
+  // product_detail =()=>{
+  //   this.pros.history.push('/product')
+  // }
+
+
+
+   // search = () => {
+   //    const url = 'http://127.0.0.1:8000/shop/?search=';
+   //    const search = this.state.search;
+   //
+   //    axios.get(url + search)
+   //   .then((res)=> {
+   //    this.setState({search_data: res.data.results});
+   //    console.log(this.state.search_data);
+   //  })}
+   //
+   //
+   //  searchchangehandler = (event) => {
+   //    this.setState({search: event.target.value},
+   //      () => {
+   //        if (this.state.search && this.state.search.length > 1) {
+   //
+   //                this.search()
+   //
+   //
+   //
+   //        }
+   //
+   //          }
+   //      )}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
   render() {
 
-    const product_card =  this.state.filter_data.map((pro)=>
-                            <Grid.Column key={pro.id}>
+    const product_card =  this.state.data.map((pro)=>
+
+
+                            <Grid.Column>
                               <Link to={ pro.name}>
+
                                 <Card
+
                                 key={pro.id}
                                 image={pro.image}
                                 header={pro.name}
                                 description={pro.price}
                                 />
                                 </Link>
+
                             </Grid.Column>
                           )
+
     const products_list = <Grid columns={3}>
                               {product_card}
                           </Grid>
 
+
+
+
     return(
       <div>
-
-        <div>
-           <Header/>
-        </div>
-      
-        <div className='men'>
-          <Link to="/men's">  <img src={men} size='large' /></Link>
-
-        </div>
+      <Header/>
 
 
 
@@ -85,7 +125,16 @@ export default class products extends Component{
               </Grid.Row>
           </Grid>
        </div>
+
     </div>
+
+
+
+
+
+
+
+
 
     )}
 }
