@@ -2,3 +2,15 @@
   position: relative;
   right: 30%;
 }
+
+.Add{
+  position: relative;
+  right: 4.5vw;
+  width: 50vw;
+}
+
+.footer_detail{
+  position: relative;
+  bottom: 12vw;
+  right: 4vw;
+}

@@ -1,13 +1,12 @@
 import React, {Component} from 'react';
 import Customerservices from "./Customerservices";
 import axios from 'axios';
-import Createuser from './Createuser.css'
 import { Button, Form, Grid, Image, Message, Segment } from 'semantic-ui-react'
 import { Dimmer, Loader } from 'semantic-ui-react';
 import Header from '../Header/Header';
 import './Login.css';
 import Footer from '../Footer/Footer';
-
+import { Redirect } from 'react-router-dom'
 
 const customerservices = new Customerservices();
 
@@ -19,10 +18,9 @@ export default class Login extends Component{
     passw:"",
     emailerror:"",
     passwerror:"",
+    loggedin: false
 
   }
-
-
 
   emailhandler =(event)=>{
     this.setState({Email:event.target.value})
@@ -54,21 +52,22 @@ export default class Login extends Component{
 
     }
 
-
-
   sendingdata =()=>{
-    customerservices.login({
-      'username' : this.state.Email,
-      'password' : this.state.passw
-    }).then(res => {
-        const token = res.data.token // you should firstly fetch the token from the data to be known
-        localStorage.setItem('id_token', token) // Store token
-    }).then((result)=> {
-      console.log(result);
-      alert("Loggedin");
-    }).catch((error)=>{
-      console.log(error);
-    })
+        customerservices.login({
+          'username' : this.state.Email,
+          'password' : this.state.passw
+        }).then(res => {
+            const token = res.data.token // you should firstly fetch the token from the data to be known
+            localStorage.setItem('id_token', token) // Store token
+        }).then((result)=> {
+          console.log(result);
+          this.props.history.push('/products')
+        }).catch((error)=>{
+          console.log(error);
+          alert("This email already exists")
+        });
+
+
 
 }
   submithandle=(e)=>{
@@ -79,20 +78,13 @@ export default class Login extends Component{
       this.setState({emailerror:""})
       this.setState({passwerror:""})}
     if (this.state.Email.length>1 && this.state.passw.length>1){
-        this.sendingdata()}
-
-
-
-
-
-
-
-}
-
-
-
+        this.sendingdata();
+}}
 
   render(){
+
+    const token = localStorage.getItem("id_token")
+
     return(
 
        <form onSubmit={this.submithandle}>
@@ -128,9 +120,11 @@ export default class Login extends Component{
 
                <div className='button'>
 
-                     <button class="ui inverted orange button">
-                           Register
-                     </button>
+                     { !token ? <button class="ui inverted orange button">
+                           Login
+                     </button> : <Button converted color='orange' disabled>
+                           Login
+                     </Button> }
 
                </div>
 
