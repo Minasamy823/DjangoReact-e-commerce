@@ -4,6 +4,8 @@ from rest_framework.routers import DefaultRouter
 from. import views
 from django.urls import path, include
 from rest_framework.response import Response
+# from Customers.views import  FrontendAppView
+
 
 router = DefaultRouter()
 # router.register(r'userprofileViewset', views.userprofileViewset, basename='userprofileViewset')
@@ -14,8 +16,10 @@ router.register(r'Logoutviewset', views.Logoutviewset, base_name='logout')
 """we don need to specify a base name coz its already in the models file"""
 urlpatterns = [
 
-    url(r'', include(router.urls)),
-    url(r'userprofileViewset', views.userprofileViewset.as_view(), name='userprofileViewset')
+    path('', include(router.urls)),
+    url('userprofileViewset', views.userprofileViewset.as_view(), name='userprofileViewset'),
+
+
 
 
 ]

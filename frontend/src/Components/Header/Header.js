@@ -15,7 +15,7 @@ const Header =() => {
         <img className='Logo' src={Logo} alt='Logo'/>
         <h className='call_number'> CALL US (844) 811-1112 </h>
           {
-            token ? <Link className='plus_cart' to="cart">
+            token ? <Link className='plus_cart' to="basket">
                     <Icon className='plus_cart' name='plus cart' size='large'/></Link>
                      : null
           }
@@ -42,7 +42,7 @@ const Header =() => {
 
       <ul className="Menu">
         <li> <Link to=''> HOME </Link> </li>
-        <li> <Link to='/products'> SHOP </Link> </li>
+        <li> <Link to='products'> SHOP </Link> </li>
         <li> <Link to="men's"> MEN'S </Link> </li>
         <li> <Link to="women's">WOMEN'S </Link> </li>
         <li> <Link to='#'>SHOP BY BRAND </Link> </li>

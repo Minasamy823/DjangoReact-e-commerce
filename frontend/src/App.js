@@ -25,12 +25,12 @@ function App() {
     <Switch>
 
           <Route path="/" exact component={Home}/>
-          <Route path="/Register/"  component={Createuser} />
-          <Route path="/Login/"  component={Login} />
-          <Route path="/cart/"  component={Cart}/>
-          <Route path="/Men's/"   component={Men}/>
-          <Route path="/Women's/"   component={Women}/>
-          <Route path="/products/"  component={Products}/>
+          <Route path="/Register"  component={Createuser} />
+          <Route path="/Login"  component={Login} />
+          <Route path="/basket"  component={Cart}/>
+          <Route path="/men's"   component={Men}/>
+          <Route path="/women's"   exact component={Women}/>
+          <Route path="/products"  component={Products}/>
           <Route path="/:id"  component={Product_details}/>
       //this route as It has : so it should depend on another one
 

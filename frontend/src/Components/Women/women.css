@@ -1,0 +1,12 @@
+.women{
+  width: 70%;
+  margin-left: 13vw;
+  margin-top: 1vw;
+  margin-bottom: 5vw;
+}
+
+@media only screen (max-width: 970px) {
+  .women{
+    width: 20px;
+  }
+}

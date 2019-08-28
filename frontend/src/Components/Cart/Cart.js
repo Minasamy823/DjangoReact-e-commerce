@@ -97,7 +97,7 @@ export default class Cart extends Component{
                 <Head/>
             </div>
             <div>
-             {!this.state.items ? items : data_map }
+             {!this.state.data.length ? items : data_map }
 
             </div>
             <div className='Foot_cart'>

@@ -5,5 +5,3 @@ djangorestframework==3.10.1
 Pillow==6.1.0
 pytz==2019.1
 sqlparse==0.3.0
-gunicorn==19.9.0
-whitenose==3.3.1

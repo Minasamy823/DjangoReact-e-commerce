@@ -43,7 +43,7 @@ export default class Product_detail extends Component{
                             </Grid.Column>
                             <Grid.Column width={12}>
                                 <Header as="h1">{product.name}</Header>
-                                <Header as="h2">Price: {product.price}</Header>
+                                <Header as="h2">Price: {"$" + product.price}</Header>
                                 <Header as="h4">Description: {product.description}</Header>
                                 <Rating icon='star' defaultRating={5} maxRating={5}/>
                                 <Header as="h4" className='Add'>

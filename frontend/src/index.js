@@ -8,8 +8,9 @@ import App from './App';
 import * as serviceWorker from './serviceWorker';
 import Createuser from "./Components/Createuser/Createuser";
 import Login from "./Components/Createuser/Login";
+import Footer from "./Components/Footer/Footer"
 import { BrowserRouter } from 'react-router-dom';
-
+import Filters from "./Components/filters/filters"
 
 const app = (
   <BrowserRouter>

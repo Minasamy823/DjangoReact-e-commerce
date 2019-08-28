@@ -76,10 +76,10 @@ export default class Createuser extends Component{
     }).then((result)=> {
       console.log(result);
       alert("Created");
+      this.props.history.push('/products')
     }).catch((error)=>{
       console.log(error);
     })
-    window.location.reload()
 
 
 }
@@ -92,7 +92,8 @@ export default class Createuser extends Component{
       this.setState({passwerror:""})
       this.setState({passwmatcherror:""})}
     if (this.state.name.length>1 && this.state.Email.length>1 && this.state.passw.length>1 && this.state.passwmatch.length>7){
-      this.sendingdata()}
+      this.sendingdata()
+}
   }
 
 

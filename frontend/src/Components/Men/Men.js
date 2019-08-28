@@ -6,7 +6,7 @@ import Header from "../Header/Header";
 import Footer from "../Footer/Footer";
 import {Link} from 'react-router-dom';
 import { Loader } from 'semantic-ui-react'
-
+import men from "../Images/men.jpg"
 
 
 
@@ -67,6 +67,9 @@ export default class Men extends Component{
     return(
       <div>
         <Header/>
+        <div>
+          <img className='men_banner' src={men}/>
+        </div>
         {spinner_condition}
 
 

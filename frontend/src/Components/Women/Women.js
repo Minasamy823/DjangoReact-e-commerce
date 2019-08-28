@@ -4,9 +4,9 @@ import { Card, Grid} from 'semantic-ui-react'
 import Header from "../Header/Header";
 import Footer from "../Footer/Footer";
 import {Link} from 'react-router-dom';
-import { Loader } from 'semantic-ui-react'
-
-
+import { Loader } from 'semantic-ui-react';
+import women from "../Images/women.jpg";
+import "./women.css"
 
 
 
@@ -23,7 +23,7 @@ export default class Women extends Component{
 
   componentWillMount(){
 
-       axios.get('http://127.0.0.1:8000/shop/?classification=Women')
+       axios.get('http://127.0.0.1:8000/shop/?classification=women')
         .then((res)=> {
          this.setState({data:res.data.results});
          console.log(this.state.data);
@@ -66,6 +66,9 @@ export default class Women extends Component{
     return(
       <div>
         <Header/>
+        <div>
+          <img className="women" src={women}/>
+        </div>
         {spinner_condition}
 
 

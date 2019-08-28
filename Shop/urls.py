@@ -5,8 +5,8 @@ from. import views
 from django.urls import path, include
 
 router = DefaultRouter()
-router.register("shop", views.products_list)
-router.register("guide", views.suppliers_list)
+router.register(r"shop", views.products_list)
+router.register(r"guide", views.suppliers_list)
 
 
 
@@ -15,10 +15,10 @@ router.register("guide", views.suppliers_list)
 
 urlpatterns = [
 
+    path('', include(router.urls)),
+    url('guide/(?P<supplier_name>\w+)/(?P<name>\w+)/$', views.products_details.as_view(), name='product_details'),
+    url('guide/(?P<supplier_name>\w+)/$', views.products_by_supplier_name.as_view(), name='supplier_name'),
 
-    url(r'guide/(?P<supplier_name>\w+)/(?P<name>\w+)/$', views.products_details.as_view(), name='product_details'),
-    url(r'guide/(?P<supplier_name>\w+)/$', views.products_by_supplier_name.as_view(), name='supplier_name'),
-    path("", include(router.urls)),
     # url(r'^shop/$', views.products_list.as_view(), name='shop'),
     # url(r'^shop/(?P<id>[-\w]+)', views.products_list.as_view(), name='shop'),
     # url(r'^(?P<name>\w+)/$', views.product_detail_by_supplier_name.as_view(), name='products_detail_by_supplier_name'),
