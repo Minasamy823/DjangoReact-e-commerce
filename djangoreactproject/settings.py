@@ -25,7 +25,7 @@ SECRET_KEY = '6viixmiljb!l=-u5^(cu2t_r04nsxz840*6%i3&n_q&kegfz^s'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = []
 
 
 # Application definition
@@ -138,13 +138,13 @@ USE_TZ = True
 
 MEDIA_ROOT =  os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
+
+
 AUTH_USER_MODEL = 'Customers.Userprofile'
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
-STATIC_ROOT = 'static'
 
 STATIC_URL = '/static/'
-
 
 CORS_ORIGIN_ALLOW_ALL = True
