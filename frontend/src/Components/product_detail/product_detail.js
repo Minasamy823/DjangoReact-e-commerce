@@ -19,7 +19,7 @@ export default class Product_detail extends Component{
   componentWillMount (){
     //this line below for getting the item we clicked from the match method
     let product_id = this.props.id;
-    let url = "http://127.0.0.1:8000/shop/?search="
+    let url = "https://react-and-django.appspot.com/shop/?search="
     axios.get(url+product_id)
     .then((res)=>{
       this.setState({data: res.data.results})
@@ -53,7 +53,7 @@ export default class Product_detail extends Component{
                                                     "quantity": 1,
                                                   }
                                                     let token = localStorage.getItem("id_token")
-                                                    let url = "http://127.0.0.1:8000/cartItems"
+                                                    let url = "https://react-and-django.appspot.com/cartItems"
                                                     if (this.state.loggedin) {
                                                       axios.post(url, cartItem, {
                                                       headers: {

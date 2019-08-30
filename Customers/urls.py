@@ -15,7 +15,7 @@ router.register(r'Logoutviewset', views.Logoutviewset, base_name='logout')
 urlpatterns = [
 
     path('', include(router.urls)),
-    url('userprofileViewset', views.userprofileViewset.as_view(), name='userprofileViewset'),
+    url(r'userprofileViewset', views.userprofileViewset.as_view(), name='userprofileViewset'),
 
 
 

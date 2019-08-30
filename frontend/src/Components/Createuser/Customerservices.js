@@ -6,11 +6,11 @@ export default class customerservices{
   constructor(){}
 
   createcustomer=(user)=>{
-    const url = 'http://127.0.0.1:8000/userprofileViewset/';
+    const url = 'https://react-and-django.appspot.com/userprofileViewset';
     return axios.post(url, user);
 }
   login=(user)=>{
-    const url = 'http://127.0.0.1:8000/Loginviewset/';
+    const url = 'https://react-and-django.appspot.com/Loginviewset';
     return axios.post(url, user);
   }
 

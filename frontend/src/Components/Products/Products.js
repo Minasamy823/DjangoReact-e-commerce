@@ -36,7 +36,7 @@ export default class products extends Component{
     let price = this.state.price;
     let available = this.state.available;
 
-    axios.get('http://127.0.0.1:8000/shop/?price=' + price + '&classification=' +
+    axios.get('https://react-and-django.appspot.com/shop/?price=' + price + '&classification=' +
     classification + '&size=' + size + '&supplier=' + supplier + '&condition=' + condition +
     '&available='+ available)
      .then((res)=> {

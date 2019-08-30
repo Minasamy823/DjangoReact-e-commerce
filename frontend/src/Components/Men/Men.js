@@ -24,7 +24,7 @@ export default class Men extends Component{
 
   componentWillMount(){
 
-       axios.get('http://127.0.0.1:8000/shop/?classification=men')
+       axios.get('https://react-and-django.appspot.com/shop/?classification=men')
         .then((res)=> {
          this.setState({data:res.data.results});
          console.log(this.state.data);
