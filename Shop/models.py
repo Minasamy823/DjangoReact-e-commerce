@@ -35,7 +35,9 @@ class Product(models.Model):
     classification = models.CharField(max_length=5) #for women or men
 
 
-
+    def __str__(self):
+           return "%s" % self.id
+           
     def __str__(self):
             return self.name
 

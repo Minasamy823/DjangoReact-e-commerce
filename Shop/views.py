@@ -7,10 +7,11 @@ from rest_framework import filters
 from django_filters.rest_framework import DjangoFilterBackend
 from rest_framework.mixins import ListModelMixin
 from rest_framework.pagination import PageNumberPagination
+from rest_framework.generics import ListAPIView
 
 # //here we have done filters and search filters and the pagination should be here as default, added
 # as well pagination for just that viewsets
-class products_list(viewsets.ModelViewSet, ListModelMixin):
+class products_list(ListAPIView, ListModelMixin):
 	queryset = Product.objects.all()
 	serializer_class = Product_serializers
 	filter_backends = [DjangoFilterBackend, filters.SearchFilter]
@@ -24,7 +25,7 @@ class products_list(viewsets.ModelViewSet, ListModelMixin):
 
 
 
-class suppliers_list (viewsets.ModelViewSet):
+class suppliers_list (ListAPIView):
 	serializer_class = supplier_serializers
 	queryset = Supplier.objects.all()
 
@@ -41,12 +42,12 @@ class products_by_supplier_name (ListCreateAPIView, UpdateAPIView):
 		return queryset
 
 
-class products_details(ListAPIView, UpdateAPIView, RetrieveDestroyAPIView):
-	lookup_field = 'name'
+class products_details(ListAPIView):
+	lookup_field = 'id'
 
 	serializer_class = Product_serializers
 	def get_queryset(self):
 
-		product_name = self.kwargs['name']
-		queryset = Product.objects.filter(name=product_name)
+		product_id = self.kwargs['id']
+		queryset = Product.objects.filter(id=product_id)
 		return queryset
