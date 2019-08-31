@@ -23,7 +23,7 @@ export default class Women extends Component{
 
   componentWillMount(){
 
-       axios.get('https://react-and-django.appspot.com/shop/?classification=women')
+       axios.get('https://herokudjangodata.herokuapp.com/shop/?classification=women')
         .then((res)=> {
          this.setState({data:res.data.results});
          console.log(this.state.data);

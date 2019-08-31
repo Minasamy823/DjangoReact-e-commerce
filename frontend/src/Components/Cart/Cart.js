@@ -18,7 +18,7 @@ export default class Cart extends Component{
           }
 // this componentWillMount is excuted before the render method
   componentWillMount(){
-    let url="http://127.0.0.1:8000/cartItems"
+    let url="https://herokudjangodata.herokuapp.com/cartItems"
     let token = localStorage.getItem('id_token')
     axios.get(url, {
     headers: {
