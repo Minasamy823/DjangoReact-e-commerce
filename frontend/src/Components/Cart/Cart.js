@@ -59,7 +59,7 @@ export default class Cart extends Component{
                        <Table.Cell textAlign="left">{res.product.price * res.quantity}$</Table.Cell>
                        <Table.Cell textAlign="left">
                             <Button inverted color='yellow' className='Buttonkk' onClick={()=>{
-                                  let url="http://127.0.0.1:8000/cartItems"
+                                  let url="https://herokudjangodata.herokuapp.com/cartItems"
                                   let token = localStorage.getItem('id_token')
                                   axios.delete(url, {
                                   headers: {

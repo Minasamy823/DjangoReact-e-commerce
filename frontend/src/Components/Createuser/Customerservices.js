@@ -10,7 +10,7 @@ export default class customerservices{
     return axios.post(url, user);
 }
   login=(user)=>{
-    const url = 'https://herokudjangodata.herokuapp.com/Loginviewset';
+    const url = 'https://herokudjangodata.herokuapp.com/Loginviewset/';
     return axios.post(url, user);
   }
 

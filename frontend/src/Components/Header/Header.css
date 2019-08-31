@@ -1,10 +1,9 @@
 
 .bar{
   position: relative;
-
-  top: 0;
-  min-width: 100%;
-  height: 60px;
+  top: 0vw;
+  min-width: 100vw;
+  height: 4vw;
   background-color: rgb(0, 0, 0);
   color: white;
   margin-top: 2vw;
@@ -13,14 +12,14 @@
 
 .Logo{
   position: relative;
-  bottom: 60%;
+  bottom: 2vw;
   left: 14.6%;
 }
 
 .call_number{
   position: relative;
-  left: 16.4%;
-  bottom: 68% ;
+  left: 16vw;
+  top: -1.5vw ;
   color: #b3b3b3;
 }
 
@@ -56,8 +55,8 @@ a.plus_cart:hover{
 }
 a.user{
   position: absolute;
-  bottom: 38% ;
-  left: 65vw;
+  bottom: 1.6vw ;
+  left: 66vw;
   cursor: pointer;
   color: white;
 
@@ -65,10 +64,10 @@ a.user{
 
 .Search{
   position: absolute;
-  bottom: 220% ;
-  left: 65vw;
-  margin-left: 50px;
-  margin-right: 50px;
+  bottom: 7vw ;
+  left: 70vw;
+  /* margin-left: 3vw; */
+
 }
 
 @media screen and (max-width:970px) {
@@ -79,8 +78,9 @@ a.user{
 .Menu{
   position: static;
   width: 90%;
-  height: 70px;
+  height: 5vw;
   margin-left: 30vw;
+  margin-top: 1vw;
 
 
 }

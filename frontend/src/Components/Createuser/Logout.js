@@ -5,8 +5,8 @@ export default class Logout extends Component {
 
   Handler = (e) => {
     e.preventDefault();
-    localStorage.removeItem("id_token");
-    this.props.history.push("/products");
+    localStorage.removeItem("id_token")
+    this.props.history.push('/products')
 
   }
 
