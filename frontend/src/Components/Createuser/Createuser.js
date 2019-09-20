@@ -109,38 +109,38 @@ export default class Createuser extends Component{
        <div className='container'>
 
 
-         <h className='h'> Register </h>
+         <h className='register'> Register </h>
          <br/>
          <br/>
-            <p>Username</p>
+            <p style={{position:"relative", right: "158px"}}>Username</p>
                <input
-                   className="Input"
+                   className="Inputss"
                    type="text"
                    value={this.state.name}
                    onChange={this.userchange}/>
             <div style={{color: "red"}}> {this.state.nameerror}</div>
             <br/>
-            <p> Email </p>
+            <p style={{position:"relative", right: "170px"}}> Email </p>
 
                <input
-                   className="Input"
+                   className="Inputss"
                    type="text"
                    value={this.state.Email}
                    onChange={this.emailhandler}/>
             <div style={{color: "red"}}> {this.state.emailerror}</div>
             <br/>
-             <p> Password </p>
+             <p style={{position:"relative", right: "157px"}}>  Password </p>
                 <input
-                    className="Input"
+                    className="Inputss"
                     type="Password"
                     value={this.state.Passw}
                     onChange={this.passwhandler}/>
             <div style={{color: "red"}}> {this.state.passwerror}</div>
 
             <br/>
-            <p> confirm Password </p>
+            <p style={{position:"relative", right: "132px"}}> confirm Password </p>
                <input
-                   className="Input"
+                   className="Inputss"
                    type="Password"
                    value={this.state.passwmatch}
                    onChange={this.passmatchwhandler}/>

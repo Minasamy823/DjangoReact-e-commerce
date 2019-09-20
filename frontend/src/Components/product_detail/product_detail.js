@@ -36,7 +36,7 @@ export default class Product_detail extends Component{
       return(
 
         <Segment style={{padding: '2em 0em', minHeight: 900}} vertical>
-                    <Grid container stackable verticalAlign='middle'>
+                    <Grid container  verticalAlign='middle'>
                         <Grid.Row>
                             <Grid.Column width={4}>
                                 <Image src={product.image}/>
@@ -47,6 +47,7 @@ export default class Product_detail extends Component{
                                 <Header as="h4">Description: {product.description}</Header>
                                 <Rating icon='star' defaultRating={5} maxRating={5}/>
                                 <Header as="h4" className='Add'>
+                                <div className='button_cart_detail'>
                                     <Button  inverted color='yellow' onClick={()=>{
                                                 let cartItem = {
                                                     "product_id": product.id,
@@ -71,15 +72,12 @@ export default class Product_detail extends Component{
 
 
                                     }} > Add to cart </Button>
-                                </Header>
-
-
+                                    </div>
+                                 </Header>
                             </Grid.Column>
                         </Grid.Row>
                     </Grid>
-
           </Segment>
-
       )
     })
 
@@ -88,11 +86,9 @@ export default class Product_detail extends Component{
           <HeaDer/>
               <div className='product_detail'>
                 {product}
-              </div>
-              <div className='footer_detail'>
-              <Footer />
-              </div>
 
+              </div>
+              
 
 
       </div>

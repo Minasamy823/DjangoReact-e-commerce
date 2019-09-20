@@ -15,7 +15,6 @@ class Order (models.Model):
     product = models.ForeignKey(Product, related_name='products', on_delete=models.CASCADE)
     first_name = models.CharField(max_length = 300, default='')
     last_name = models.CharField(max_length = 300, default='')
-    street = models.CharField(max_length = 300, default='')
     address = models.CharField(max_length = 300, default='')
     country = models.CharField(max_length = 300, default='')
     city = models.CharField(max_length = 300, default='')
@@ -23,4 +22,3 @@ class Order (models.Model):
     email = models.EmailField(max_length=20)
     phone = models.IntegerField(default=0)
     payment = models.CharField(max_length=1, choices=Payemnt_methods)
-    comments = models.CharField(max_length = 300)

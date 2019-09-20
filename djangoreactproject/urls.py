@@ -26,7 +26,7 @@ urlpatterns = [
     url(r'^', include('Customers.urls')),
     url(r'^', include('order.urls')),
     url(r'^', include('cart.urls')),
-
+    url(r'^', include('payment.urls')),
 
 
 

@@ -1,0 +1,24 @@
+[[source]]
+url = "https://pypi.python.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+dj-database-url = "==0.5.0"
+Django = "==2.2.3"
+django-cors-headers = "==3.0.2"
+django-filter = "==2.2.0"
+djangorestframework = "==3.10.1"
+gunicorn = "==19.9.0"
+mysqlclient = "==1.4.4"
+Pillow = "==6.1.0"
+psycopg2 = "==2.8.3"
+pytz = "==2019.1"
+sqlparse = "==0.3.0"
+whitenoise = "==3.3.1"
+stripe = "*"
+
+[dev-packages]
+
+[requires]
+python_version = "3.7"

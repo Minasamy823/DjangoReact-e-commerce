@@ -1,16 +1,25 @@
 .product_detail{
   position: relative;
-  right: 30%;
+  top: 100px;
+
 }
 
-.Add{
+.Add {
   position: relative;
-  right: 4.5vw;
-  width: 50vw;
+  right: 4%;
+
+}
+@media (max-width: 970px) {
+  .product_detail{
+    margin-top: 60px;
+  }
+  .Add{
+    right: -1%;
+  }
+
 }
 
-.footer_detail{
-  position: relative;
-  bottom: 12vw;
-  right: 4vw;
+
+.button_cart_detail{
+  margin-left: 9%;
 }

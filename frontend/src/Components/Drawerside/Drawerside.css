@@ -1,0 +1,32 @@
+
+.container_drawer{
+  width: 25%;
+  animation: moveImage 0.7s  ;
+  margin-top: 250px;
+  position: absolute;
+  display: block;
+  z-index: 2;
+  text-align: center;
+  font-size: 160%;
+  background-color: rgba(0,0,0, 0.5);
+}
+@keyframes moveImage {
+  from { left: -50% }
+  to { left: 0% }
+}
+
+
+
+
+.element_drawer{
+  text-align: center;
+  background-color: black;
+  border-style: solid;
+  color: white;
+  height: 150px;
+  border-width: 0.1px;
+}
+.element_drawer:hover{
+  background-color: grey;
+  cursor: pointer;
+}

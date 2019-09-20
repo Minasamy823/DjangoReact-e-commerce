@@ -1,7 +1,11 @@
-div.BC{
-  margin-left: 30vw;
-  display: block;
-  margin-bottom: 5VW;
+.BC{
+  margin-left: 28vw;
+  width: 38%;
+  margin-bottom: 5vw;
+}
+.BC2{
+  width: 100%;
+  margin-bottom: 5vw;
 }
 
 
@@ -25,9 +29,11 @@ div.BC{
 
 .men{
   margin-left: 13vw;
-  width: 100vw;
+  width: 80%;
   margin-bottom: 5vw;
 }
+
+
 
 .footer_home{
 position: relative;

@@ -1,24 +1,22 @@
 .Container {
   position: absolute;
   top: 38%;
-  left: 39%;
+  text-align:center;
+  width: 100%;
 
 
 }
-.Footer2{
-  position: absolute;
-  top:70%;
-  right:65vw;
+.headers{
+  width: 30%;
+  display: inline;
 }
-
-
 
 .h_login {
-  margin-left: 3%;
-  font-size: 2vw;
+
+  font-size: 260%;
   font-weight: bold;
   font-family: Times;
-  line-height: 2vw;
+  line-height: 40%;
   color: grey;
   cursor: pointer;
 }
@@ -28,8 +26,8 @@
 }
 
 .h_slash {
-  margin-left: 2%;
-  font-size: 2vw;
+  margin-left: 1%;
+  font-size: 260%;
   font-weight: bold;
   font-family: Times;
   line-height: 2vw;
@@ -38,11 +36,11 @@
 }
 
 .h_register {
-  margin-left: %;
-  font-size: 2vw;
+
+  font-size: 260%;
   font-weight: bold;
   font-family: Times;
-  line-height: 2vw;
+  line-height: 20%;
   color: black;
 }
 
@@ -60,8 +58,8 @@
 .Input {
     border-color: #f0f3f7;
     display: inline-block;
-    width: 20vw;
-    height: 2.5vw;
+    width: 23%;
+    height: 40px;
     border-top-color: white;
     font-size: 16px;
     font-weight:70px;
@@ -88,7 +86,7 @@
 .button {
   position: absolute;
   left: 4vw;
-  margin-top: 4%;
+  margin-top: 1%;
 }
 
 @media only screen (max-width=970px) {

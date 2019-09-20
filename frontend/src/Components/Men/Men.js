@@ -22,8 +22,14 @@ export default class Men extends Component{
 
 }
 
+updateWindowDimensions =()=> {
+  this.setState({ width: window.innerWidth, height: window.innerHeight });
+}
+
   componentWillMount(){
 
+    this.updateWindowDimensions()
+    window.addEventListener('resize', this.updateWindowDimensions);
        axios.get('https://herokudjangodata.herokuapp.com/shop/?classification=men')
         .then((res)=> {
          this.setState({data:res.data.results});
@@ -35,9 +41,11 @@ export default class Men extends Component{
   render() {
 
     const product_card =  this.state.data.map((pro)=>
+                            this.state.width > 970 ?
                             <Grid.Column>
                               <Link to={ pro.name}>
                                 <Card
+                                style={{width : "85%"}}
                                 key={pro.id}
                                 image={pro.image}
                                 header={pro.name}
@@ -45,16 +53,28 @@ export default class Men extends Component{
                                 />
                                 </Link>
                             </Grid.Column>
+                            :
+                            <Grid.Column
+                            style={{width: this.state.width >= 767 ? "150px" : "120px", left : "10%"}}>
+                              <Link to={ pro.name}>
+                                <Card
+                                style={{width : "150px"}}
+                                key={pro.id}
+                                image={pro.image}
+                                header={pro.price}
+                                />
+                                </Link>
+                            </Grid.Column>
                           )
 
-    const products_list = <Grid columns={3}>
+    const products_list = <Grid columns={4}>
                               {product_card}
                           </Grid>
 
     const spinner_condition =  this.state.data.length>2 ?
 
-                          <div className='grid_container'>
-                              <Grid container stackable verticalAlign='middle'>
+                          <div className='Men_grid'>
+                              <Grid  verticalAlign='middle'>
                                   <Grid.Row>
                                       <Grid.Column textAlign='center'>
                                           {products_list}

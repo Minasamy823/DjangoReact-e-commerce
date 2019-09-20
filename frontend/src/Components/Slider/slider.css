@@ -1,4 +1,12 @@
 .slider {
-  margin: auto;
+  
+  margin-top: 28px;
+  margin-left: 22%;
   width: 60%;
+}
+@media ( max-width: 972px) {
+  .slider{
+    margin-top: 55px;
+  }
+
 }

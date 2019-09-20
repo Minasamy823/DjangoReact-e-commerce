@@ -1,25 +1,31 @@
 
 .bar{
   position: relative;
-  top: 0vw;
-  min-width: 100vw;
-  height: 4vw;
+  top: 0;
+  height: 70px;
   background-color: rgb(0, 0, 0);
   color: white;
-  margin-top: 2vw;
+  margin-top: 40px;
+
 
 }
 
 .Logo{
   position: relative;
-  bottom: 2vw;
+  bottom: 50%;
   left: 14.6%;
+}
+@media(max-width: 600px){
+  .Logo{
+    width: 80px;
+    bottom: 7px;
+  }
 }
 
 .call_number{
   position: relative;
   left: 16vw;
-  top: -1.5vw ;
+  bottom: 25px ;
   color: #b3b3b3;
 }
 
@@ -28,45 +34,43 @@
   cursor: pointer;
 }
 
-@media screen and (max-width:970px) {
-  .call_number {
-    display: none;
-  }}
+
 
 
 .plus_cart{
   position: absolute;
   bottom: 38% ;
-  left: 31vw;
+  left: 62%;
   cursor: pointer;
 }
 
-@media screen and (max-width:796px) {
-  .plus_cart {
-    margin-left: 12vw;
-  }}
+@media screen and (max-width:970px) {
+    .call_number {
+      display: none;
+    }
+
+
+  }
 
 a.plus_cart {
   color: white;
 
 }
-a.plus_cart:hover{
-  color: white;
-}
-a.user{
+
+
+.user{
   position: absolute;
-  bottom: 1.6vw ;
-  left: 66vw;
-  cursor: pointer;
+  bottom: -2px;
+  left: 1vw;
   color: white;
 
 }
 
 .Search{
   position: absolute;
-  bottom: 7vw ;
+  bottom: 120px ;
   left: 70vw;
-  /* margin-left: 3vw; */
+  margin-left: auto;
 
 }
 
@@ -76,19 +80,25 @@ a.user{
   }}
 
 .Menu{
-  position: static;
+  position: relative;
+  margin-top: 40px;
   width: 90%;
-  height: 5vw;
-  margin-left: 30vw;
-  margin-top: 1vw;
+  left: 31%;
 
 
 }
 
-@media  screen and (max-width:970px) {
-  .Menu{
-    display: none;
-  }
+
+@media (max-width: 1282px) {
+  .Menu {
+		left: 26%;
+	}
+
+}
+@media (max-width: 970px) {
+	.Menu {
+		display: none;
+	}
 }
 
 li  {
@@ -98,11 +108,13 @@ li  {
 li a {
   color: grey;
   display: inline-block;
-  padding: 25px;
+  padding: 2vw;
   font-size: 20px;
   font-weight: normal;
 
 }
+
+
 li a:hover{
   color: black;
   font-size: 25px;
@@ -110,4 +122,37 @@ li a:hover{
 
 li a:focus {
   outline: none;
+}
+.Log_out{
+  position: absolute;
+  bottom: 38%;
+  left: 65%;
+  cursor: pointer;
+  color: white;
+}
+@media  screen and (min-width:460px) and (max-width:970px) {
+  .Log_out{
+    margin-left: 4%;
+
+  }
+}
+@media  screen and (max-width:459px) {
+  .Log_out{
+    margin-left: 6%;
+
+  }
+}
+.Drawer_button {
+  color: white;
+  position: absolute;
+  right: 9px;
+  top: 22px;
+  cursor: pointer;
+}
+
+.Drawer_slider{
+
+  width: 100%;
+  margin-top: 2px;
+  /* margin-left: 20px; */
 }

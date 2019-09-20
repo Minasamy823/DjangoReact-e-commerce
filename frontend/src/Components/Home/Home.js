@@ -22,7 +22,7 @@ export default class Home extends Component{
             <div>
                 <Header/>
             </div>
-            <div>
+            <div style={{overflow:"hidden"}}>
                 <Slider/>
             </div>
             <div className='Text'>
@@ -37,8 +37,8 @@ export default class Home extends Component{
                    sports watches by Fastrack, Tommy Hilfiger, Timex and Casio.</p>
 
             </div>
-            <div className='men'>
-              <Link to="/men's">  <img src={men} size='large' /></Link>
+            <div >
+              <Link to="/men's">  <img  className='men' src={men} size='large' /></Link>
 
             </div>
 
@@ -55,13 +55,13 @@ export default class Home extends Component{
                    sports watches by Fastrack, Tommy Hilfiger, Timex and Casio.</p>
 
             </div>
-            <div className='BC'>
-                <Link to='/products'><img src={BC} size='medium' centered /></Link>
+            <div >
+                <Link to='/products'> <img className='BC' src={BC} size='medium' /> </Link>
 
             </div>
 
             <div>
-                <Link to='/products'> <img src={BC3} size='medium' centered /> </Link>
+                <Link to='/products'> <img className='BC2' src={BC3} size='medium' /> </Link>
 
             </div>
 

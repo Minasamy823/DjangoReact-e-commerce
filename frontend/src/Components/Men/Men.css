@@ -1,7 +1,10 @@
 .Men_grid{
 
   position: relative;
-  right: 18%;
+  left: 21%;
+  width: 120%;
+  padding-right: 60%;
+  vertical-align: top;
 
 
 
@@ -12,11 +15,4 @@
   margin-left: 13vw;
   margin-top: 1vw;
   margin-bottom: 5vw;
-}
-
-@media only screen (max-width: 970px) {
-  .men{
-    width: 50px;
-    margin-left: 17vw;
-  }
 }

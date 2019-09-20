@@ -1,9 +1,12 @@
 .grid_container{
+
 position: relative;
-right: 18%;
-
-
+left: 22%;
+width: 120%;
+padding-right: 60%;
+vertical-align: top;
 }
+
 .Footer_products_list{
   position: relative;
   top: 60%;
@@ -12,13 +15,53 @@ right: 18%;
 .filter{
   text-align: center;
   margin-bottom: 2vw;
-  margin-top: 0vw;
-
 }
 
 select{
   padding: 10px;
-  margin: 5px;
-  
+  margin: 9px;
+  height: 45px;
+  box-shadow: 10px 10px 10px grey;
+
+}
+
+select:focus{
+  color: brown;
+}
+
+
+.option_des{
+  color: #F1A052;
+}
+
+
+.men_home{
+  /* position: relative; */
+  top: 20%;
+  margin-left: 13vw;
+  width: 80%;
+  margin-bottom: 5vw;
+}
+
+.button_products {
+  margin-left:20px;
+  border-style: solid;
+  border-color: #F1A052 ;
+  border-width: 1px;
+  height: 40px;
+  width: 80px;
+  background-color: white;
+  color: #F1A052;
+  font-weight: 30px;
+}
+.button_products:hover{
+  background-color: #F1A052;
+  color: white;
+}
+@media and screen (max-width: 970px) {
+  .button_products{
+    position: relative;
+    left: 30px;
+  }
 
 }

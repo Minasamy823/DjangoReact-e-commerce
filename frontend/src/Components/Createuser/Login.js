@@ -91,15 +91,17 @@ export default class Login extends Component{
           <Header />
 
             <div className='Container'>
-            <h className='h_login'> Login </h>
-            <h className='h_slash'> / </h>
-            <h className='h_register'>
-                  <a className='a'href='register'>Register</a>
-            </h>
+                  <div className='headers'>
+                        <h className='h_login'> Login </h>
+                        <h className='h_slash'> / </h>
+                        <h className='h_register'>
+                              <a className='a'href='register'>Register</a>
+                        </h>
+                  </div>
             <br/>
             <br/>
 
-               <p> Email </p>
+               <p style={{position : "relative", right: "185px"}}>  Email </p>
 
                   <input
                       className="Input"
@@ -110,7 +112,7 @@ export default class Login extends Component{
                <br/>
 
 
-                <p> Password </p>
+                <p style={{position : "relative", right: "175px"}}> Password </p>
                    <input
                        className="Input"
                        type="Password"
@@ -129,9 +131,7 @@ export default class Login extends Component{
                </div>
 
              </div>
-             <div className='Footer2'>
-              <Footer/>
-              </div>
+
             </form>
     )
   }

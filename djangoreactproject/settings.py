@@ -51,11 +51,13 @@ INSTALLED_APPS = [
     'rest_framework',
     'corsheaders',
     'rest_framework.authtoken',
+    'payment',
     'django_filters',
     'Customers',
     'Shop',
     'order',
     'cart',
+
 ]
 
 MIDDLEWARE = [
@@ -163,3 +165,5 @@ CORS_ORIGIN_ALLOW_ALL = True
 STATIC_URL = '/static/'
 
 # django_heroku.settings(locals())
+STRIPE_PUBLISHABLE_KEY = 'pk_test_lBeo3kGEZ7e86onsWiMCxemf009lxJBfcW'
+STRIPE_SECRET_KEY = 'sk_test_ulyW05vkz6LxiMsDItyjGAlJ00nZMiw5SW'

@@ -1,12 +1,29 @@
 .women{
-  width: 70%;
+  /* position: relative; */
+  margin-left: 21%;
+  width: 120%;
+  padding-right: 60%;
+  vertical-align: top;
+}
+
+
+
+.women_img{
+  width: 70vw;
   margin-left: 13vw;
   margin-top: 1vw;
   margin-bottom: 5vw;
+
+}
+@media and screen (max-width: 970px) {
+  .women_img{
+    margin-top: 34px;
+  }
 }
 
-@media only screen (max-width: 970px) {
-  .women{
-    width: 20px;
-  }
+.ui.grid {
+    margin-top: -1rem;
+    margin-bottom: -1rem;
+    margin-left: 0rem;
+    margin-right: -1rem;
 }
