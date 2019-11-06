@@ -76,7 +76,9 @@ a.plus_cart {
 
 @media screen and (max-width:970px) {
   .Search {
-    display: none;
+
+    width: 20%;
+    /* margin-left: auto; */
   }}
 
 .Menu{

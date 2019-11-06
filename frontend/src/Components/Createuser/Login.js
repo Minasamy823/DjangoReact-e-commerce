@@ -64,7 +64,7 @@ export default class Login extends Component{
           this.props.history.push('/products')
         }).catch((error)=>{
           console.log(error);
-          alert("This email already exists")
+          alert("Invalid credentials")
         });
 
 
@@ -91,17 +91,15 @@ export default class Login extends Component{
           <Header />
 
             <div className='Container'>
-                  <div className='headers'>
-                        <h className='h_login'> Login </h>
-                        <h className='h_slash'> / </h>
-                        <h className='h_register'>
-                              <a className='a'href='register'>Register</a>
-                        </h>
-                  </div>
+            <h className='h_login'> Login </h>
+            <h className='h_slash'> / </h>
+            <h className='h_register'>
+                  <a className='a'href='register'>Register</a>
+            </h>
             <br/>
             <br/>
 
-               <p style={{position : "relative", right: "185px"}}>  Email </p>
+               <p className='email'>  Email </p>
 
                   <input
                       className="Input"
@@ -112,7 +110,7 @@ export default class Login extends Component{
                <br/>
 
 
-                <p style={{position : "relative", right: "175px"}}> Password </p>
+                <p className='password'> Password </p>
                    <input
                        className="Input"
                        type="Password"

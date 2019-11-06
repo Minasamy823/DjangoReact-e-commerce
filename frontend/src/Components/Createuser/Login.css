@@ -6,13 +6,16 @@
 
 
 }
-.headers{
-  width: 30%;
-  display: inline;
-}
+/* .Footer2{
+  position: absolute;
+  top:70%;
+  right:65vw;
+} */
+
+
 
 .h_login {
-
+  margin-left: 3%;
   font-size: 260%;
   font-weight: bold;
   font-family: Times;
@@ -36,7 +39,7 @@
 }
 
 .h_register {
-
+  /* margin-left: %; */
   font-size: 260%;
   font-weight: bold;
   font-family: Times;
@@ -58,7 +61,7 @@
 .Input {
     border-color: #f0f3f7;
     display: inline-block;
-    width: 23%;
+    width: 410px;
     height: 40px;
     border-top-color: white;
     font-size: 16px;
@@ -67,6 +70,32 @@
     font-variant:normal;
     border-width: 1px;
 
+
+}
+.email{
+  position : relative;
+  right: 185px;
+}
+.password{
+  position : relative;
+   right: 175px;
+}
+@media (max-width: 600px) {
+  .Input{
+    width: 301px;
+  }
+  .h_register{
+    font-size: 200%;
+  }
+  .h_login{
+    font-size: 200%;
+  }
+  .email{
+    right: 135px;
+  }
+  .password{
+    right: 120px;
+  }
 
 }
 

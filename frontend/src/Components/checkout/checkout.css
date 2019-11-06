@@ -75,7 +75,12 @@
     width: 80%;
   }
   .checkout{
-    width: 60%;
+    width: 70%;
   }
 
+}
+@media only screen and (max-width: 550px){
+  .checkout{
+    width: 100%;
+  }
 }

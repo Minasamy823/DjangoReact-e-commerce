@@ -3,6 +3,7 @@
   margin-top: 80px;
   position: relative;
   text-align: center;
+  /* width: 100%; */
 }
 
 @media (max-width: 970px) {
@@ -12,30 +13,40 @@
 
 }
 
-.Footer_register{
+/* .Footer_register{
   position: absolute;
   overflow: hidden;
   top:80%;
   right:67vw;
-}
+} */
 
-.register {
+.register_createuser {
   margin-left: 5px;
-  font-size: 4%;
+  font-size: 300%;
   font-weight: bold;
   font-family: Times;
-  line-height: 4%;
   color: black;
+}
+@media (max-width: 600px) {
+  .register_createuser{
+    font-size: 200%;
+  }
+
+}
+
+.username_createuser{
+  position:relative;
+   right: 158px;
 }
 
 .Inputss {
 
     border-color: #f0f3f7;
     display: inline-block;
-    width: 38%;
+    width: 380px;
     height: 40px;
     border-top-color: white;
-    font-size: 16%;
+    font-size: 120%;
     font-weight:70px;
     color: black;
     font-variant:normal;
@@ -43,6 +54,39 @@
 
 
 }
+.Email_craeteuser{
+  position:relative;
+   right: 170px;
+}
+
+.password_createuser{
+  position:relative;
+  right: 157px;
+}
+.confirm_password{
+  position: relative;
+  right: 132px;
+}
+@media (max-width : 600px) {
+  .Inputss{
+    width: 280px;
+  }
+  .username_createuser{
+    right: 107px;
+  }
+  .Email_craeteuser{
+    right: 120px;
+  }
+  .password_createuser{
+    right: 110px;
+  }
+  .confirm_password{
+    right: 85px;
+
+  }
+
+}
+
 .Inputss:hover{
   background-color: #E8E8E8;
   border-color: grey;

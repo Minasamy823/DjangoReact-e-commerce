@@ -91,7 +91,8 @@ export default class Createuser extends Component{
       this.setState({emailerror:""})
       this.setState({passwerror:""})
       this.setState({passwmatcherror:""})}
-    if (this.state.name.length>1 && this.state.Email.length>1 && this.state.passw.length>1 && this.state.passwmatch.length>7){
+    if (this.state.name.length>1 && this.state.Email.length>1 &&
+       this.state.passw.length>1 && this.state.passwmatch.length>7){
       this.sendingdata()
 }
   }
@@ -109,10 +110,10 @@ export default class Createuser extends Component{
        <div className='container'>
 
 
-         <h className='register'> Register </h>
+         <h className='register_createuser'> Register </h>
          <br/>
          <br/>
-            <p style={{position:"relative", right: "158px"}}>Username</p>
+            <p className='username_createuser'>Username</p>
                <input
                    className="Inputss"
                    type="text"
@@ -120,7 +121,7 @@ export default class Createuser extends Component{
                    onChange={this.userchange}/>
             <div style={{color: "red"}}> {this.state.nameerror}</div>
             <br/>
-            <p style={{position:"relative", right: "170px"}}> Email </p>
+            <p className="Email_craeteuser"> Email </p>
 
                <input
                    className="Inputss"
@@ -129,7 +130,7 @@ export default class Createuser extends Component{
                    onChange={this.emailhandler}/>
             <div style={{color: "red"}}> {this.state.emailerror}</div>
             <br/>
-             <p style={{position:"relative", right: "157px"}}>  Password </p>
+             <p className='password_createuser'>  Password </p>
                 <input
                     className="Inputss"
                     type="Password"
@@ -138,31 +139,20 @@ export default class Createuser extends Component{
             <div style={{color: "red"}}> {this.state.passwerror}</div>
 
             <br/>
-            <p style={{position:"relative", right: "132px"}}> confirm Password </p>
+            <p className='confirm_password'> confirm Password </p>
                <input
                    className="Inputss"
                    type="Password"
                    value={this.state.passwmatch}
                    onChange={this.passmatchwhandler}/>
             <div style={{color: "red"}}> {this.state.passwmatcherror}</div>
-
-
             <div className='button'>
-
             <button class="ui inverted orange button">
                   Register
             </button>
-
             </div>
-
-
         </div>
-        <div className='Footer_register'>
-        <Footer/>
-        </div>
-
       </form>
-
     )
   }
 }

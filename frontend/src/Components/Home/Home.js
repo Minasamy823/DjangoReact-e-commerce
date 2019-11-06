@@ -57,20 +57,10 @@ export default class Home extends Component{
             </div>
             <div >
                 <Link to='/products'> <img className='BC' src={BC} size='medium' /> </Link>
-
             </div>
-
             <div>
                 <Link to='/products'> <img className='BC2' src={BC3} size='medium' /> </Link>
-
             </div>
-
-
-            <div className='footer_home'>
-                <Footer/>
-
-            </div>
-
       </div>
 
     )

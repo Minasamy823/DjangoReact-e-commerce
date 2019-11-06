@@ -40,7 +40,7 @@ class CheckoutForm extends React.Component {
   let formData = new FormData();
   formData.append("source", token.id);
   formData.append("amount", this.props.total);
-  let response = axios.post("http://127.0.0.1:8000/payment", formData)
+  let response = axios.post("https://herokudjangodata.herokuapp.com/payment", formData)
   .then((res)=>{
   this.setState({resp_message: res.data})
   if (res.data) {

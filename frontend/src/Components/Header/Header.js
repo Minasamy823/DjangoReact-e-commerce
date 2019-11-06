@@ -36,15 +36,15 @@ export default class Header extends Component {
 
     return(
       <div>
-      {this.state.width <= 767 && this.state.opened ?
+      {this.state.width <= 970 && this.state.opened ?
         <div className='Drawer_slider'> <Drawer/> </div> : null}
 
         <div className='bar'>
-          {this.state.width <= 767 ?
+          {this.state.width <= 970 ?
           <Icon className='Drawer_button' name='align justify'
           size="large"  onClick={this.sidebar}/>  : null}
 
-          
+
           <img className='Logo' src={Logo} alt='Logo'/>
           <h className='call_number'> CALL US (844) 811-1112 </h>
            <div>
