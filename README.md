@@ -1,4 +1,8 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+##Demo
+[Live](https://django-react-250923.appspot.com/)
+
+This project was bootstrapped with [Create React App]
+(https://github.com/facebook/create-react-app).
 
 ## Available Scripts
 
